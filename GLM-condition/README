@@ -1,0 +1,46 @@
+GLM ANALYSIS
+
+This folder contains files and scripts to run the GLM analysis for the multisensory scenes in MTL study.
+The code can be used to perform 2 sets of analyses:
+
+1. Subject-level analysis of univariate responses per ROI for experimental conditions.
+2. Across-subject whole-brain statistical maps in MNI space for defined contrasts.
+
+The following scripts should be run in the following order to complete this analysis.
+
+1. glm_contrasts.py
+
+This script performs the following:
+- Loads in all the BOLD data, labels, and confounds
+- Creates design matrices for Audio, Visual, Congruent, and Incongruent conditions
+- Fits a first-level GLM model per subject and saves:
+    - Basic maps for each condition in T1w space
+    - User defined contrasts in T1w space and MNI space
+
+All parameters to run this script are defined inside the python file. The following bash command submits to the cluster:
+
+sbatch run_glm_contrasts_PP.sh <net-ID>
+Eg. d
+
+2. run_randomise_glm.sh
+
+This script performs the following:
+- Creates a merged 4D file using FSL merge from each subject's contrast file
+- Runs a one-tailed t-test with 5000 permutations using FSL randomise & returns corrected & uncorrected p-value maps
+
+The following call is used on the terminal:
+sbatch run_randomise_glm.sh <net-ID> <contrast>
+Eg. sbatch run_randomise_glm-two-sided.sh or62 visual-audio
+
+3. glm_beta_analysis.py
+
+This scripts performs the following:
+- Loop over all subjects, conditions, and ROIs
+- Load in the condition level betas in T1w space
+- Mask the betas using the appropriate resamples mask (ASHS/HarOxf)
+- Average the betas for the ROI and store it in a CSV
+
+The following call is used on the terminal:
+sbatch run_glm_beta_analysis.sh <net-ID>
+Eg. sbatch run_glm_beta_analysis_PP.sh or62
+
