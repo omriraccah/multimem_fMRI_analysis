@@ -11,7 +11,7 @@ module load FSL
 export FSLOUTPUTTYPE=NIFTI_GZ
 
 # Move to the right directory
-cd "/gpfs/milgram/scratch60/turk-browne/$1/sandbox/GLM_structs/$2/MNI152NLin2009cAsym/" || exit
+cd "./MNI152NLin2009cAsym/" || exit
 
 # Create a merged file of all the 3D maps
 OUTPUT_FILE="merged_contrast_$2_all-subs_MNI152NLin2009cAsym.nii.gz"

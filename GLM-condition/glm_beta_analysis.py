@@ -97,9 +97,9 @@ if __name__ == '__main__':
     
     user = "or62"
 
-    beta_directory = f"/gpfs/milgram/scratch60/turk-browne/{user}/sandbox/GLM_structs"
+    beta_directory = "./GLM_structs"
 
-    preproc_directory = f"/gpfs/milgram/scratch60/turk-browne/or62/sandbox/preprocessed"
+    preproc_directory = "./preprocessed"
 
     # ROI specifications
     #rois = ["post_right_HPC_mask_T1", "ant_right_HPC_mask_T1", "post_left_HPC_mask_T1", "ant_left_HPC_mask_T1", "post_combined_HPC_mask_T1", "ant_combined_HPC_mask_T1", "HPC", "CA1", "CA2+3", "DG", "EC", "PHC", "PRC", "Subiculum", "HPC", "HPC"] # Has to be the name the file is saved as

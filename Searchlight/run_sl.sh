@@ -9,11 +9,11 @@
 # Set up the environment
 module load miniconda
 module load OpenMPI
-conda activate "/gpfs/milgram/project/turk-browne/or62/conda_envs/myenv_multimem"
+conda activate "./myenv_multimem"
 
 # Get the python path from the conda environment
 PYTHON_PATH=$(which python)
 echo "Using Python from: $PYTHON_PATH"
 
 # Run the python script with full path to Python (DO NOT EDIT LINE BELOW)
-/gpfs/milgram/apps/hpc.rhel7/software/dSQ/1.05/dSQBatch.py --job-file /home/or62/project/multisensory-memory-project/Searchlight/joblist_searchlight_RSA.txt --status-dir ./logs
+/gpfs/milgram/apps/hpc.rhel7/software/dSQ/1.05/dSQBatch.py --job-file ./joblist_searchlight_RSA.txt --status-dir ./logs

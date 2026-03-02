@@ -35,7 +35,7 @@ def make_design_matrices(func_dir, sub, nruns, conds):
     designmats = []
     
     # exlusion df
-    exclusion_df = pd.read_csv('/gpfs/milgram/scratch60/turk-browne/or62/sandbox/decoding_structs/greater_than_1_5_exclusion.csv')
+    exclusion_df = pd.read_csv('./greater_than_1_5_exclusion.csv')
     exclusion_df_sub = exclusion_df[exclusion_df['subs'] == f"mm{sub}"]
 
     # Loop over runs and process events files, turn into design matrices, append
@@ -255,8 +255,8 @@ if __name__ == "__main__":
 
     mni_path = "/home/or62/nilearn_data/icbm152_2009/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz"
 
-    preproc_dir = f"/gpfs/milgram/scratch60/turk-browne/or62/sandbox/preprocessed"
+    preproc_dir = f"./preprocessed"
 
-    final_save_path = f"/gpfs/milgram/scratch60/turk-browne/{user}/sandbox/GLM_structs/"
+    final_save_path = f"./GLM_structs/"
 
     run_glm_analysis(preproc_dir, subs, nruns, conditions, mni_path, final_save_path)

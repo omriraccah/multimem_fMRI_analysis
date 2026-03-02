@@ -1021,7 +1021,7 @@ if __name__ == "__main__":
     apply_exclusion = True
     user = "or62"
     vis = False
-    preproc_dir = f"/gpfs/milgram/scratch60/turk-browne/{user}/sandbox/preprocessed"
+    preproc_dir = f"./preprocessed"
     conditions = ['V-V', 'A-A', 'C-C', 'V-IC_V', 'A-IC_A', 'V-A', 'IC_V-IC_V', 'IC_A-IC_A']
     conditions_classification = ['V', 'A', 'C', 'IC_V', 'IC_A']
 
@@ -1035,9 +1035,9 @@ if __name__ == "__main__":
     
     os.makedirs(results_path, exist_ok=True)
     
-    classification_results_path = f"/gpfs/milgram/scratch60/turk-browne/or62/sandbox/RSA_structs/scene_classification_subs_{len(subs)}_fisher_{fisher}_norm_{norm}_exclusion_{apply_exclusion}_Results_singleloop_glmC.csv"
+    classification_results_path = f"./scene_classification_subs_{len(subs)}_fisher_{fisher}_norm_{norm}_exclusion_{apply_exclusion}_Results_singleloop_glmC.csv"
    
-    exclusion_path = '/gpfs/milgram/scratch60/turk-browne/or62/sandbox/decoding_structs/greater_than_1_5_exclusion.csv'
+    exclusion_path = './greater_than_1_5_exclusion.csv'
 
     if execute: df = run_rsa_analysis(rois=rois, rois_bool=rois_bool, pos=pos, subs=subs,
                                       nruns=nruns, norm=norm, fisher=fisher, user=user,

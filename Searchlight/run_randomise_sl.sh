@@ -13,9 +13,9 @@ export FSLOUTPUTTYPE=NIFTI_GZ
 # Move to the right directory
 # $3 should be either "contrasts" or "condition"
 if [ "$3" == "condition" ]; then
-    cd "/gpfs/milgram/scratch60/turk-browne/$1/sandbox/searchlight_rsa_results/$2/MNI152NLin2009cAsym" || exit
+    cd "./MNI152NLin2009cAsym" || exit
 else
-    cd "/gpfs/milgram/scratch60/turk-browne/$1/sandbox/searchlight_rsa_results/$3/$2" || exit
+    cd "./searchlight_rsa_results/$3/$2" || exit
 fi
 
 # will need to add MNI152NLin2009cAsym after $2/

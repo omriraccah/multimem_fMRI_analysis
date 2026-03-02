@@ -1,5 +1,0 @@
-srun --mpi=pmi2 $PYTHON_PATH -u /gpfs/milgram/home/or62/project/multisensory-memory-project/Searchlight/rsa_searchlight.py -sub 01 -cond V-V
-srun --mpi=pmi2 $PYTHON_PATH -u /gpfs/milgram/home/or62/project/multisensory-memory-project/Searchlight/rsa_searchlight.py -sub 01 -cond A-A
-srun --mpi=pmi2 $PYTHON_PATH -u /gpfs/milgram/home/or62/project/multisensory-memory-project/Searchlight/rsa_searchlight.py -sub 02 -cond C-C
-srun --mpi=pmi2 $PYTHON_PATH -u /gpfs/milgram/home/or62/project/multisensory-memory-project/Searchlight/rsa_searchlight.py -sub 02 -cond A-IC_A
-srun --mpi=pmi2 $PYTHON_PATH -u /gpfs/milgram/home/or62/project/multisensory-memory-project/Searchlight/rsa_searchlight.py -sub 03 -cond V-IC_V
